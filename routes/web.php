@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Front'], function () {
+
+Route::get('/', 'FrontController@index')->name('front.index');
+    Route::get('/document/download/{file}', 'FrontController@download')->name('document.download');
+    Route::get('/portfolio/show/{id}', 'FrontController@show')->name('front.portfolio.show');
 });
+
+
 
 Auth::routes();
 

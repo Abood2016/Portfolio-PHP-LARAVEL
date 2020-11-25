@@ -61,8 +61,8 @@ class SettingController extends Controller
         if ($request->location != $setting->location) {
             $array['location'] = $request->location;
         }
-        if ($request->linkin_url != $setting->linkin_url) {
-            $array['linkin_url'] = $request->linkin_url;
+        if ($request->linkdin_url != $setting->linkdin_url) {
+            $array['linkdin_url'] = $request->linkdin_url;
         }
 
 
