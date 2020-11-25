@@ -44,10 +44,20 @@ Route::group(['prefix' => 'admin', 'namespace' => 'dashboard', 'middleware' => '
         Route::post('/document/update', 'DocumentController@update')->name('document.update');
         Route::post('/delete', 'DocumentController@deleteDocument')->name('document.delete');
     });
-        //portfolio routes
+        //settings routes
         Route::group(['prefix' => 'settings'], function () {
-            
+            Route::get('/' , 'SettingController@index')->name('setting.index');
+            Route::get('/edit/{id}', 'SettingController@edit')->name('setting.edit');
+            Route::post('/update', 'SettingController@update')->name('setting.update');
+
         });
+
+    //profile routes
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/{id}', 'ProfileController@index')->name('profile.index');
+        Route::post('/update', 'ProfileController@update')->name('profile.update');
+     
+    });
 
 });
 

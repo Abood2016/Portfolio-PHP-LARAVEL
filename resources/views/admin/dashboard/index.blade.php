@@ -29,14 +29,14 @@
         <!-- small box -->
         <div class="small-box bg-info">
             <div class="inner">
-                <h3>150</h3>
+                <h3>{{ \App\Models\Portfolio::count() }}</h3>
 
-                <p>New Orders</p>
+                <p>Portfolios</p>
             </div>
             <div class="icon">
                 <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('portfolio.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -44,9 +44,9 @@
         <!-- small box -->
         <div class="small-box bg-success">
             <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{ \App\Models\Document::count() }}</sup></h3>
 
-                <p>Bounce Rate</p>
+                <p>Documents</p>
             </div>
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>

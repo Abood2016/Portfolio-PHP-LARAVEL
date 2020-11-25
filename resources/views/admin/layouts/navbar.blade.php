@@ -92,9 +92,12 @@
                 {{-- <span class="badge badge-warning navbar-badge">15</span> --}}
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">Profile</span>
-                <a href="{{ route('admin.logout') }}" class="dropdown-item dropdown-footer">Logout</a>
-
+                {{-- <span class="dropdown-item dropdown-header"></span> --}}
+                <a href="{{ route('profile.index',['id' => auth()->user()->id ]) }}" 
+                class="dropdown-item dropdown-footer">Profile</a>
+                  <a href="{{ route('admin.logout') }}" 
+                class="dropdown-item dropdown-footer">Logout</a>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">

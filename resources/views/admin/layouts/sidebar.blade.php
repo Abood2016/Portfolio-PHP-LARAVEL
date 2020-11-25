@@ -14,7 +14,7 @@
           <img src="{{ asset('backend-assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="{{ route('profile.index',['id' => auth()->user()->id]) }}" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -31,7 +31,7 @@
             </li>
           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-user"></i>
               <p>
                 Portfolio
                 <i class="right fas fa-angle-left"></i>
@@ -48,7 +48,7 @@
         </li>
         <li class="nav-item has-treeview ">
                 <a href="#" class="nav-link ">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <i class="nav-icon fas fa-file-pdf"></i>
                   <p>
                     Document
                     <i class="right fas fa-angle-left"></i>
@@ -69,23 +69,12 @@
               </li>
        
           <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Settings
-                <i class="right fas fa-angle-left"></i>
-              </p>
+          <li class="nav-item">
+            <a href="{{ route('setting.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p class="text">Settings</p>
             </a>
-            <ul class="nav nav-treeview {{ is_active('portfolio') }}">
-              <li class="nav-item {{ is_active('portfolio') }}">
-                <a href="" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-          
-          
-            </ul>
+          </li>
           </li>
         </ul>
       </nav>

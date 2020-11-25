@@ -29,14 +29,14 @@ class DocumentController extends Controller
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $request->file->move(public_path('documents/'), $filename);
             $data->file = $filename;
+            }
+            $data->title = $request->title;
+            $data->user_id = Auth::id();
+            $data->save();
+            return response()->json([
+                'success' => 'Done', 200
+            ]);
         }
-        $data->title = $request->title;
-        $data->user_id = Auth::id();
-        $data->save();
-        return response()->json([
-            'success' => 'Done', 200
-        ]);
-    }
 
     public function show()
     {

@@ -17,14 +17,13 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('site_title');
             $table->string('job_title');
-            $table->string('image');
-            $table->string('location');
-            $table->string('twitter_url');
-            $table->string('linkdin_url');
-            $table->string('facebook_url');
-            $table->longText('about');
+            $table->string('image')->nullable();
+            $table->string('location')->nullable();
+            $table->string('twitter_url')->nullable();
+            $table->string('linkdin_url')->nullable();
+            $table->string('facebook_url')->nullable();
+            $table->longText('about')->nullable();
             
-            $table->foreignId('user_id')->constrained()->OnDelete('cascade');
             $table->timestamps();
         });
     }

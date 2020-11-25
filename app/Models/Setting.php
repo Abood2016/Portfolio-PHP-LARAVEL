@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
@@ -10,12 +11,9 @@ class Setting extends Model
    
     protected $fillable = [
         'site_title', 'job_title', 'image', 'location',
-        'twitter_url', 'linkdin_url', 'facebook_url', 'about', 'user_id'
+        'twitter_url', 'linkdin_url', 'facebook_url', 'about', 
     ];
 
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
     
 }
